@@ -3,8 +3,8 @@
   <img src="https://raw.githubusercontent.com/GiorgioCode/Tutorias_Javascript/master/HEADER_CODER.png" alt="Javascript Coder"></a>
 </h1>
 
-<div align="center"
-  <a href="https://fretamar.github.io/coderhouse49765-js-retamar-francisco/"><img src="https://icons.iconarchive.com/icons/simpleicons-team/simple/256/github-pages-icon.png" align="center" alt="Github pages" />  Link a la pre-entrega</a>
+<div align="center">
+  <a href="https://fretamar.github.io/coderhouse49765-js-retamar-francisco/"><img src="https://icons.iconarchive.com/icons/simpleicons-team/simple/256/github-pages-icon.png" align="center" alt="Github pages"></a>    Link a la pre-entrega
 </div>
 
 ## Introducción al proyecto
