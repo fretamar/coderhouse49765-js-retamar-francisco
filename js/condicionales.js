@@ -38,7 +38,7 @@ else {
     console.warn("No sos mayor de edad, por lo que no podes ingresar.")
 }
 */
-
+/*
 let curaMalaria = "Agua Tonica" 
 let adivinanza = confirm("¿Queres jugar un juego?🎁")
 
@@ -69,7 +69,7 @@ if (adivinanza === true) {
 else {
     console.log("Que aburridx.")
 }
-
+*/
 
 /*
 = igual

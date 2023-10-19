@@ -20,7 +20,7 @@ while (bebidaAnalcoholica !== "Cerveza") {
 }
     alert("No se pueden ingresas bebidas alcoholicas")
 */
-
+/*
 let bebida = prompt("Elegí una bebida:")
 
 switch(bebida) {
@@ -39,3 +39,4 @@ switch(bebida) {
     default:
         console.log("No tenemos", bebida)
 }
+*/
