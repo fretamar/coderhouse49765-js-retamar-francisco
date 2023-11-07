@@ -1,30 +1,29 @@
-const bebidas = ['Cerveza', 'Gaseosa', 'Jugo', 'Agua', 'Vino', 'Champagne', 'Agua con gas', 'Soda']
+/*const liquidos = ['Cerveza', 'Gaseosa', 'Jugo', 'Agua', 'Vino', 'Champagne', 'Agua con gas', 'Soda']*/
 
 //break --> frena el bucle cuando se cumple la condicion del if
 //saltear bebidas alcoholicas
 
 /*
-for (let b = 0; b < bebidas.length; b++) {
+for (let b = 0; b < liquidos.length; b++) {
     if(b === 0 || b === 4 || b === 5){
         continue 
     }
-    console.log(bebidas[b])
+    console.log(liquidos[b])
 }
+*/
 
+/*let bebidaSinAlcohol = "Jugo"
 
-let bebidaAnalcoholica = "Jugo"
-
-while (bebidaAnalcoholica !== "Cerveza") {
-    console.log("Bebida elegida ", bebidaAnalcoholica)
-    bebidaAnalcoholica = prompt("Elegí una bebida sin alcohol:")
+while (bebidaSinAlcohol !== "Cerveza") {
+    console.log("Bebida elegida ", bebidaSinAlcohol)
+    bebidaSinAlcohol = prompt("Elegí una bebida sin alcohol:")
 }
     alert("No se pueden ingresas bebidas alcoholicas")
 */
-
 /*
-let bebida = prompt("Elegí una bebida:")
+let liquido = prompt("Elegí una bebida:")
 
-switch(bebida) {
+switch(liquido) {
     case "Gaseosa":
         console.log("Tenemos gaseosas")
         break
@@ -38,6 +37,6 @@ switch(bebida) {
         console.log("Tenemos champagne")
         break
     default:
-        console.log("No tenemos", bebida)
+        console.log("No tenemos", liquido)
 }
 */

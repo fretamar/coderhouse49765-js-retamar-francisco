@@ -1,4 +1,7 @@
+const codigo = ()=> parseInt(Math.random() * 1000)
+
 const cerveza1 = {
+    id: codigo(),
     marca: "Heineken",
     tamanio: "1 litro",
     formato: "Botella",
@@ -6,6 +9,7 @@ const cerveza1 = {
 }
 
 const cerveza2 = {
+    id: codigo(),
     marca: "Brahma",
     tamanio: "1 litro",
     formato: "Botella",
@@ -13,6 +17,7 @@ const cerveza2 = {
 }
 
 const cerveza3 = {
+    id: codigo(),
     marca: "Quilmes",
     tamanio: "1 litro",
     formato: "Botella",
@@ -20,6 +25,7 @@ const cerveza3 = {
 }
 
 const cerveza4 = {
+    id: codigo(),
     marca: "Heineken",
     tamanio: "500 cc",
     formato: "Lata",
@@ -27,6 +33,7 @@ const cerveza4 = {
 }
 
 const cerveza5 = {
+    id: codigo(),
     marca: "Brahma",
     tamanio: "500 cc",
     formato: "Lata",
@@ -34,6 +41,7 @@ const cerveza5 = {
 }
 
 const cerveza6 = {
+    id: codigo(),
     marca: "Quilmes",
     tamanio: "500 cc",
     formato: "Lata",
@@ -42,12 +50,13 @@ const cerveza6 = {
 
 //Funcion constructora
 
-function Cerveza (marca, tamanio, formato, precio) {
+function Cerveza (id, marca, tamanio, formato, precio) {
+    this.id = codigo();
     this.marca = marca;
     this.tamanio = tamanio;
     this.formato = formato;
     this.precio = precio;
 }
 
-const cerveza7 = new Cerveza("Stella Artois", "1 litro", "Botella", 1100)
-const cerveza8 = new Cerveza("Stella Artois", "500 cc", "Lata", 600)
+const cerveza7 = new Cerveza(codigo(), "Stella Artois", "1 litro", "Botella", 1100)
+const cerveza8 = new Cerveza(codigo(), "Stella Artois", "500 cc", "Lata", 600)
