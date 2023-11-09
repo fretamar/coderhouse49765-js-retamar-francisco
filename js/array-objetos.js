@@ -41,6 +41,15 @@ function listarBebidas() {
     bebidas.forEach((bebida) => console.table(bebida))
 }
 
+function recorrerArray() {
+    for (let i = 0; i < bebidas.length; i++) {
+        console.log(bebidas[i]);
+    }
+}
+function recorrerArrayTable() {
+    console.table(bebidas)
+}
+
 //Arrow Function
 const encontrarBebida = () => {
     let buscarBebida = prompt("Escribe la bebida que quieres buscar:");
@@ -62,7 +71,7 @@ const encontrarBebida = () => {
                         if (formato !== "" && formato !== null) {
                             let precio = parseFloat(prompt("Indica el precio de la bebida:"));
                             if (precio !== "" && precio !== null) {
-                                bebidas.push(codigo(),marca,tamanio,tipo,formato,precio)
+                                bebidas.push(codigo(), marca, tamanio, tipo, formato, precio)
                                 console.log("Gracias por agregar la bebida: " + codigo() + " " + marca + " " + tamanio + " " + tipo + " " + formato + " $" + precio);
                             } else {
                                 console.warn('Debes ingresar un precio válido');
@@ -83,4 +92,29 @@ const encontrarBebida = () => {
             console.log("Gracias por su visita!");
         }
     }
+}
+
+function bebidasPack6() {
+    let precioPack = bebidas.map((bebida) => {
+        return {
+            id: bebida.id,
+            nombre: bebida.marca,
+            formato: bebida.formato,
+            precioUnidad: bebida.precio,
+            precioPack6: bebida.precio * 5.5,
+        }
+    }) 
+    console.table(precioPack)
+}
+
+function bebidasAlfabeticamente() {
+    bebidas.sort((a, b)=> {
+        if(a.tipo > b.tipo){
+            return 1
+        } if(a.tipo < b.tipo){
+            return -1
+        }
+        return 0
+    })
+    console.table(bebidas)
 }
