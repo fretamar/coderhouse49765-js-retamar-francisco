@@ -6,16 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
-    <!-- <link rel="stylesheet" href="./css/styles.css"> -->
+    <link rel="stylesheet" href="./css/styles.css">
     <script defer src="./js/index.js"></script>
-    <!-- defer es un atributo que permite leer el js pero ejecutarlo luego de haber procesado todo el html-->
-    <script defer src="./js/condicionales.js"></script>
-    <script defer src="./js/ciclos.js"></script>
-    <script defer src="./js/funciones.js"></script>
-    <script defer src="./js/objetos.js"></script>
-    <script defer src="./js/arrays.js"></script>
-    <script defer src="./js/array-objetos.js"></script>
-
+    <script defer src="./js/generales.js"></script>
     <title>Javascript 49765</title>
 </head>
 
@@ -40,6 +33,23 @@
             <option value="">Agua con gas</option>
             <option value="">Soda</option>
         </select>
+    </div>
+
+    <div class="tarjeta-producto" id="producto-1">
+        <img class="imagen-producto"
+            src="https://labebidadetusfiestas.com.ar/38662-thickbox_default/cerveza-heineken-rubia-lata-473cc.jpg"
+            alt="Heineken lata">
+        <h2 class="titulo-producto">Cerveza Heineken 473cc</h2>
+        <p class="precio-producto">$670</p>
+        <label id="cantidad" for="cantidad">Cantidad:</label>
+        <select class="selector-cantidad" id="cantidad" name="cantidad">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <button class="boton-agregar" onclick="agregarAlCarrito()">Agregar al Carrito</button>
     </div>
 </body>
 </body>
