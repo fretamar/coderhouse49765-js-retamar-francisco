@@ -1,3 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .tarjeta-producto {
     border: 1px solid #1c1d20;
     border-radius: 10px;
@@ -5,15 +26,15 @@
     margin: 10px;
     background-color: #302f2f;
     width: 220px;
-    align-items: center;
     display: flex;
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center; 
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .imagen-producto {
     width: 100%;
+    max-width: 100%;
     border-radius: 8px;
 }
 
@@ -27,7 +48,7 @@
     font-size: x-large;
     color: green;
     font-weight: bold;
-}
+    }
 
 #cantidad {
     color: aliceblue;
@@ -37,7 +58,7 @@
     padding: 5px;
     width: 60px;
     color: aliceblue;
-    background-color:#302f2f;
+    background-color: #302f2f;
 }
 
 .boton-agregar {
@@ -52,4 +73,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+    .tarjeta-producto {
+        justify-content: center;
+    }
 }
