@@ -429,7 +429,7 @@ function crearProducto(bebida) {
                     <option value="4">4</option>
                     <option value="5">5</option>
                 </select>
-                <button id="${bebida.id}" class="boton-agregar" onclick="agregarAlCarrito()">Agregar al Carrito</button>
+                <button id="${bebida.id}" class="boton-agregar">Agregar al Carrito</button>
             </div>`
 }
 
@@ -446,33 +446,53 @@ function cargarBebida() {
     if (bebidas.length > 0) {
         creadorBebida.innerHTML = ""
         bebidas.forEach((bebida) => creadorBebida.innerHTML += crearProducto(bebida))
-        const bebidaCarrito = document.querySelectorAll("button.boton-agregar")
-        console.log(bebidaCarrito)
+        agregarBebidaCarrito()
     } else {
         creadorBebida.innerHTML = productoError();
     }
 }
+
 cargarBebida()
 
 const selCategoria = document.querySelector("select.selectBebidas");
-const tiposAgregados = new Set(); 
+const tiposAgregados = new Set();
 
 bebidas.forEach((bebida) => {
-    if (!tiposAgregados.has(bebida.tipo)) { 
+    if (!tiposAgregados.has(bebida.tipo)) {
         const opcion = document.createElement("option");
         opcion.value = bebida.tipo;
         opcion.text = bebida.tipo;
         selCategoria.appendChild(opcion);
-
-        tiposAgregados.add(bebida.tipo); 
+        tiposAgregados.add(bebida.tipo);
     }
 });
 
 //Eventos
 
+const carrito = []
+
 const irCarrito = document.querySelector("img#carrito-compra")
 
 irCarrito.addEventListener("click", () => {
-    alert("Te rompiste un carrito mi chango")
-})   
+    alert("Te estamos redirigiendo al carrito")
+})
 
+selCategoria.addEventListener("change", () => {
+    const categoriaFiltrada = selCategoria.value;
+    const filtroCategoria = bebidas.filter(bebida => bebida.tipo.includes(categoriaFiltrada));
+    console.table(filtroCategoria);
+});
+
+function agregarBebidaCarrito() {
+    const bebidaCarrito = document.querySelectorAll("button.boton-agregar")
+    bebidaCarrito.forEach((boton) => {
+        boton.addEventListener("click", (e) => {
+            const id = parseInt(e.target.id)
+            const productoSeleccionado = bebidas.find((bebida) => bebida.id === id)
+            carrito.push(productoSeleccionado)
+            console.table(carrito)
+        })
+    })
+}
+
+ 
