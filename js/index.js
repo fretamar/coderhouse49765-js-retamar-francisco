@@ -34,7 +34,7 @@ console.log("Esta buscando: " + articulo);
 console.warn("Mensaje de advertencia");
 console.error("Mensaje de error");
 */
-
+/*
 //funcion convencional
 function usuarioEdad() {
     nombre = prompt("Ingresa tu nombre: ")
@@ -53,7 +53,7 @@ function usuarioEdad() {
 }
 
 usuarioEdad()
-
+*/
 //funcion con parametro
 
 let promocionPack6 = 5
@@ -429,7 +429,7 @@ function crearProducto(bebida) {
                     <option value="4">4</option>
                     <option value="5">5</option>
                 </select>
-                <button class="boton-agregar" onclick="agregarAlCarrito()">Agregar al Carrito</button>
+                <button id="${bebida.id}" class="boton-agregar" onclick="agregarAlCarrito()">Agregar al Carrito</button>
             </div>`
 }
 
@@ -446,11 +446,33 @@ function cargarBebida() {
     if (bebidas.length > 0) {
         creadorBebida.innerHTML = ""
         bebidas.forEach((bebida) => creadorBebida.innerHTML += crearProducto(bebida))
+        const bebidaCarrito = document.querySelectorAll("button.boton-agregar")
+        console.log(bebidaCarrito)
     } else {
         creadorBebida.innerHTML = productoError();
     }
 }
 cargarBebida()
 
+const selCategoria = document.querySelector("select.selectBebidas");
+const tiposAgregados = new Set(); 
+
+bebidas.forEach((bebida) => {
+    if (!tiposAgregados.has(bebida.tipo)) { 
+        const opcion = document.createElement("option");
+        opcion.value = bebida.tipo;
+        opcion.text = bebida.tipo;
+        selCategoria.appendChild(opcion);
+
+        tiposAgregados.add(bebida.tipo); 
+    }
+});
+
 //Eventos
+
+const irCarrito = document.querySelector("img#carrito-compra")
+
+irCarrito.addEventListener("click", () => {
+    alert("Te rompiste un carrito mi chango")
+})   
 

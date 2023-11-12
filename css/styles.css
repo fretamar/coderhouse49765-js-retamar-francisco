@@ -75,8 +75,30 @@ a {
     align-items: center;
 }
 
+.carrito-de-compra{
+    background-color:#ffffff;
+    height: 10vh;
+    display: flex;
+    justify-content: right;
+    border: #007bff;
+    border-radius: 10px;
+    width: 90vw;
+}
+
+#carrito-compra{
+    background-color:#ffffff;
+    height: 100%;   
+    justify-content: center;
+  
+}
+
+#carrito-compra:hover{
+    transform: scale(1.1);
+}
+
 @media screen and (max-width: 768px) {
     .tarjeta-producto {
         justify-content: center;
     }
 }
+
