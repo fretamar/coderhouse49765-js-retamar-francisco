@@ -24,6 +24,8 @@
 
 ## Consignas de la 2da pre-entrega 
 
+*Algunos ciclos, condicionales y elementos (prompt, script, alert) los dejé comentados para evitar las interrupciones durante la           revisión del js, como también para que se pueda ir directamente a recorrer, filtrar y utilizar los arrays con las funciones superiores*
+
   - **Objetos:** Creación de objetos y funciones generadoras de objetos.
   - **Arrays y Array de objetos:** Lista de ítems y listas de objetos generados previamente para ser utilizados
   - **Funciones de orden superior:** Funciones que nos permitan trabajar sobre los arrays, pudiendo filtrar información, crear o eliminar objetos. También hacer calculo sobre los precios, cantidad o variedad de objetos. Funciones flecha para trabajar de manera mas organizada y optimizar el código.
