@@ -52,6 +52,8 @@ function usuarioEdad() {
     }
 }
 
+usuarioEdad()
+
 //funcion con parametro
 
 let promocionPack6 = 5
