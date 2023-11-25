@@ -46,7 +46,7 @@ a {
 
 .precio-producto {
     font-size: x-large;
-    color: green;
+    color: #31ac00;
     font-weight: bold;
     }
 
@@ -102,3 +102,20 @@ a {
     }
 }
 
+#total-carrito{
+    font-weight: bold;
+    color:#000000;
+    border-color: #a858af;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 10px;
+    max-width: 50vw;
+    min-width: 20vw;
+    padding-left: 10px;
+    margin-left: 10px   ;
+}
+
+#precio-carrito{
+    font-style: italic;
+    color: #31ac00;
+}

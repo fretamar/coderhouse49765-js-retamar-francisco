@@ -422,7 +422,7 @@ function crearProducto(bebida) {
                 <h2 class="titulo-producto">${bebida.marca}</h2>
                 <p class="precio-producto">${bebida.precio}</p>
                 <label for="cantidad">Cantidad:</label>
-                <select class="selector-cantidad" id="cantidad" name="cantidad">
+                <select class="selector-cantidad" id="cantidad-${bebida.id}" name="cantidad">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -469,30 +469,67 @@ bebidas.forEach((bebida) => {
 
 //Eventos
 
-const carrito = []
+    const carrito = JSON.parse(localStorage.getItem("miCarrito")) || [] 
 
-const irCarrito = document.querySelector("img#carrito-compra")
+    const irCarrito = document.querySelector("img.carrito-compra")
 
-irCarrito.addEventListener("click", () => {
-    alert("Te estamos redirigiendo al carrito")
-})
-
-selCategoria.addEventListener("change", () => {
-    const categoriaFiltrada = selCategoria.value;
-    const filtroCategoria = bebidas.filter(bebida => bebida.tipo.includes(categoriaFiltrada));
-    console.table(filtroCategoria);
-});
-
-function agregarBebidaCarrito() {
-    const bebidaCarrito = document.querySelectorAll("button.boton-agregar")
-    bebidaCarrito.forEach((boton) => {
-        boton.addEventListener("click", (e) => {
-            const id = parseInt(e.target.id)
-            const productoSeleccionado = bebidas.find((bebida) => bebida.id === id)
-            carrito.push(productoSeleccionado)
-            console.table(carrito)
-        })
+    irCarrito.addEventListener("click", () => {
+        alert("Te estamos redirigiendo al carrito")
     })
-}
+    
+    irCarrito.addEventListener("mousemove", ()=> {
+        irCarrito.title = carrito.length > 0 ? `${carrito.length} productos en carrito` : "Carrito sin productos"
+        })
 
- 
+      selCategoria.addEventListener("change", () => {
+        const categoriaFiltrada = selCategoria.value;
+        const filtroCategoria = bebidas.filter(bebida => bebida.tipo.includes(categoriaFiltrada));
+        console.table(filtroCategoria);
+    });
+
+    function agregarBebidaCarrito() {
+        const bebidaCarrito = document.querySelectorAll("button.boton-agregar")
+        bebidaCarrito.forEach((boton) => {
+            boton.addEventListener("click", (e) => {
+                const id = parseInt(e.target.id)
+                const productoSeleccionado = bebidas.find((bebida) => bebida.id === id)
+                carrito.push(productoSeleccionado)
+                localStorage.setItem("miCarrito", JSON.stringify(carrito))    
+            })
+        })
+    }
+
+      
+    function calcularTotalCarrito() {
+        let total = 0
+      
+        bebidas.forEach(bebida => {
+          const cantidad = parseInt(document.getElementById(`cantidad-${bebida.id}`).value, 10)
+          const precioProducto = bebida.precio * cantidad
+          total += precioProducto
+        })
+      
+        return total
+      }
+      
+      function actualizarTotalCarrito() {
+        const precioCarrito = document.querySelector("span#calculo-precio-carrito")
+        const total = calcularTotalCarrito()
+        precioCarrito.textContent = total.toFixed(2)
+      }
+      
+      const botonesAgregar = document.querySelectorAll('.boton-agregar');
+      botonesAgregar.forEach(boton => {
+        boton.addEventListener('click', event => {
+          const idProducto = event.target.id
+          const cantidad = parseInt(document.getElementById(`cantidad-${idProducto}`).value, 10)
+          const producto = bebidas.find(item => item.id == idProducto)
+          const precioProducto = producto.precio * cantidad
+          
+          const precioCarrito = document.querySelector("span#calculo-precio-carrito")
+          const totalActual = parseFloat(precioCarrito.textContent) || 0
+          const nuevoTotal = totalActual + precioProducto
+          precioCarrito.textContent = nuevoTotal.toFixed(2)
+        })
+      })
+    
