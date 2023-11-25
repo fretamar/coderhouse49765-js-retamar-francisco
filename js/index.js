@@ -499,12 +499,11 @@ bebidas.forEach((bebida) => {
         })
     }
 
-      
     function calcularTotalCarrito() {
         let total = 0
       
         bebidas.forEach(bebida => {
-          const cantidad = parseInt(document.getElementById(`cantidad-${bebida.id}`).value, 10)
+          const cantidad = parseInt(document.getElementById(`cantidad-${bebida.id}`).value)
           const precioProducto = bebida.precio * cantidad
           total += precioProducto
         })
@@ -515,21 +514,26 @@ bebidas.forEach((bebida) => {
       function actualizarTotalCarrito() {
         const precioCarrito = document.querySelector("span#calculo-precio-carrito")
         const total = calcularTotalCarrito()
-        precioCarrito.textContent = total.toFixed(2)
+        precioCarrito.textContent = total.toFixed()
       }
       
       const botonesAgregar = document.querySelectorAll('.boton-agregar');
       botonesAgregar.forEach(boton => {
         boton.addEventListener('click', event => {
           const idProducto = event.target.id
-          const cantidad = parseInt(document.getElementById(`cantidad-${idProducto}`).value, 10)
+          const cantidad = parseInt(document.getElementById(`cantidad-${idProducto}`).value)
           const producto = bebidas.find(item => item.id == idProducto)
           const precioProducto = producto.precio * cantidad
           
           const precioCarrito = document.querySelector("span#calculo-precio-carrito")
           const totalActual = parseFloat(precioCarrito.textContent) || 0
           const nuevoTotal = totalActual + precioProducto
-          precioCarrito.textContent = nuevoTotal.toFixed(2)
+          precioCarrito.textContent = nuevoTotal.toFixed()
         })
+      })
+
+      document.getElementById('vaciar-carrito').addEventListener('click', function() {
+        const precioCarrito = document.querySelector("span#calculo-precio-carrito")
+        precioCarrito.textContent = '0,00'
       })
     
