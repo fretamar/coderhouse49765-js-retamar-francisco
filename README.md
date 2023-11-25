@@ -1,5 +1,5 @@
 <h1 align="center">
-  <p align="center">Primera pre-entrega Javascript 49765 - Francisco Retamar</p>
+  <p align="center">Tercera pre-entrega Javascript 49765 - Francisco Retamar</p>
   <img src="https://raw.githubusercontent.com/GiorgioCode/Tutorias_Javascript/master/HEADER_CODER.png" alt="Javascript Coder"></a>
 </h1>
 
@@ -29,3 +29,10 @@
   - **Objetos:** Creación de objetos y funciones generadoras de objetos.
   - **Arrays y Array de objetos:** Lista de ítems y listas de objetos generados previamente para ser utilizados
   - **Funciones de orden superior:** Funciones que nos permitan trabajar sobre los arrays, pudiendo filtrar información, crear o eliminar objetos. También hacer calculo sobre los precios, cantidad o variedad de objetos. Funciones flecha para trabajar de manera mas organizada y optimizar el código.
+
+## Consignas de la 3ra pre-entrega 
+
+ - **JSON y Storage:** Genere el carrito de compras y lo almacena en la memoria local de la pc, estructurando el mismo como un array y convirtiendolo a la misma estructura del array de objetos que tengo en el código js.
+ - **Modificación del DOM por eventos:** Generé un span donde te va indicando el precio que vas obteniendo desde la selección de productos una vez das click en el boton de cada tarjeta multiplicando la cantidad por el precio y luego haciendo una sumatoria de todos los productos seleccionados.
+
+
