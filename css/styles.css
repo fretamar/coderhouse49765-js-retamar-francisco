@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -123,3 +124,9 @@ a {
 #vaciar-carrito{
     margin-left: 10px   ;
 }
+
+div:where(.swal2-container) .swal2-input{
+    padding: 0 0.75em;
+    width: auto;
+}
+

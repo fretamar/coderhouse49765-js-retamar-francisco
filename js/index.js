@@ -34,26 +34,35 @@ console.log("Esta buscando: " + articulo);
 console.warn("Mensaje de advertencia");
 console.error("Mensaje de error");
 */
-/*
+
 //funcion convencional
 function usuarioEdad() {
-    nombre = prompt("Ingresa tu nombre: ")
-    if (nombre !== null && nombre !== "") {
-        edad = prompt("Ingresa tu edad: ")
-        if (edad >= 18) {
-            console.log("Bienvenidx", nombre)
+    Swal.fire({
+        title: "Cual es tu edad?",
+        icon: "info",
+        input: "number",
+        inputPlaceholder: 'Ingresa tu edad',
+        showCancelButton: true,
+      confirmButtonText: 'Verificar',
+      cancelButtonText: 'Cancelar',
+      inputValidator: (value) => {
+        if (!value || value < 18) {
+          return 'Debes tener al menos 18 años.';
         }
-        else {
-            console.log("Tenes que ser mayor de edad para ingresar")
-        }
-    }
-    else {
-        console.log("Tenes que ingresar un nombre válido")
-    }
-}
+      }
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          '¡Edad minima aceptada!',
+          `Tenes ${result.value} años.`,
+          'success'
+        );
+      }
+    });
+  }
 
 usuarioEdad()
-*/
+
 //funcion con parametro
 
 let promocionPack6 = 5
@@ -442,17 +451,17 @@ function productoError() {
             </div>`
 }
 
-function cargarBebida() {
-    if (bebidas.length > 0) {
+function cargarBebida(array) {
+    if (array.length > 0) {
         creadorBebida.innerHTML = ""
-        bebidas.forEach((bebida) => creadorBebida.innerHTML += crearProducto(bebida))
+        array.forEach((bebida) => creadorBebida.innerHTML += crearProducto(bebida))
         agregarBebidaCarrito()
     } else {
         creadorBebida.innerHTML = productoError();
     }
 }
 
-cargarBebida()
+cargarBebida(bebidas)
 
 const selCategoria = document.querySelector("select.selectBebidas");
 const tiposAgregados = new Set();
@@ -474,7 +483,14 @@ bebidas.forEach((bebida) => {
     const irCarrito = document.querySelector("img.carrito-compra")
 
     irCarrito.addEventListener("click", () => {
-        alert("Te estamos redirigiendo al carrito")
+        Swal.fire({
+            title: "¡Muchas gracias!",
+            text: "Te estamos re dirigiendo al carrito",
+            imageUrl: "./recursos/supermarket-cart.gif",
+            imageHeight: 100,
+            showConfirmButton: false,
+            timer: 2000
+        });
     })
     
     irCarrito.addEventListener("mousemove", ()=> {
@@ -484,7 +500,7 @@ bebidas.forEach((bebida) => {
       selCategoria.addEventListener("change", () => {
         const categoriaFiltrada = selCategoria.value;
         const filtroCategoria = bebidas.filter(bebida => bebida.tipo.includes(categoriaFiltrada));
-        console.table(filtroCategoria);
+        cargarBebida(filtroCategoria)
     });
 
     function agregarBebidaCarrito() {
