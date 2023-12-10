@@ -36,32 +36,37 @@ console.error("Mensaje de error");
 */
 
 //funcion convencional
-function usuarioEdad() {
-    Swal.fire({
-        title: "Cual es tu edad?",
-        icon: "info",
-        input: "number",
-        inputPlaceholder: 'Ingresa tu edad',
-        showCancelButton: true,
-      confirmButtonText: 'Verificar',
-      cancelButtonText: 'Cancelar',
-      inputValidator: (value) => {
-        if (!value || value < 18) {
-          return 'Debes tener al menos 18 años.';
-        }
-      }
-    }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire(
-          '¡Edad minima aceptada!',
-          `Tenes ${result.value} años.`,
-          'success'
-        );
-      }
-    });
-  }
-
-usuarioEdad()
+const edadUsuario = new Promise((resolve, rejected) => {
+    setTimeout(() => {
+        Swal.fire({
+            title: "Antes de continuar, ¿cuál es tu edad?",
+            icon: "info",
+            input: "number",
+            inputPlaceholder: 'Ingresa tu edad',
+            showCancelButton: true,
+            confirmButtonText: 'Verificar',
+            cancelButtonText: 'Cancelar',
+            inputValidator: (value) => {
+                if (!value || value < 18) {
+                    return 'Debes tener al menos 18 años.'
+                }
+            }
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    '¡Edad mínima aceptada!',
+                    `Tienes ${result.value} años.`,
+                    'success'
+                )
+                resolve(result.value)
+            } else {
+                rejected('Ingresa una edad válida para ingresar')
+            }
+        }).catch((error) => {
+            rejected(error)
+        })
+    }, 1000)
+})
 
 //funcion con parametro
 
@@ -478,78 +483,78 @@ bebidas.forEach((bebida) => {
 
 //Eventos
 
-    const carrito = JSON.parse(localStorage.getItem("miCarrito")) || [] 
+const carrito = JSON.parse(localStorage.getItem("miCarrito")) || []
 
-    const irCarrito = document.querySelector("img.carrito-compra")
+const irCarrito = document.querySelector("img.carrito-compra")
 
-    irCarrito.addEventListener("click", () => {
-        Swal.fire({
-            title: "¡Muchas gracias!",
-            text: "Te estamos re dirigiendo al carrito",
-            imageUrl: "./recursos/supermarket-cart.gif",
-            imageHeight: 100,
-            showConfirmButton: false,
-            timer: 2000
-        });
-    })
-    
-    irCarrito.addEventListener("mousemove", ()=> {
-        irCarrito.title = carrito.length > 0 ? `${carrito.length} productos en carrito` : "Carrito sin productos"
-        })
-
-      selCategoria.addEventListener("change", () => {
-        const categoriaFiltrada = selCategoria.value;
-        const filtroCategoria = bebidas.filter(bebida => bebida.tipo.includes(categoriaFiltrada));
-        cargarBebida(filtroCategoria)
+irCarrito.addEventListener("click", () => {
+    Swal.fire({
+        title: "¡Muchas gracias!",
+        text: "Te estamos re dirigiendo al carrito",
+        imageUrl: "./recursos/supermarket-cart.gif",
+        imageHeight: 100,
+        showConfirmButton: false,
+        timer: 2000
     });
+})
 
-    function agregarBebidaCarrito() {
-        const bebidaCarrito = document.querySelectorAll("button.boton-agregar")
-        bebidaCarrito.forEach((boton) => {
-            boton.addEventListener("click", (e) => {
-                const id = parseInt(e.target.id)
-                const productoSeleccionado = bebidas.find((bebida) => bebida.id === id)
-                carrito.push(productoSeleccionado)
-                localStorage.setItem("miCarrito", JSON.stringify(carrito))    
-            })
-        })
-    }
+irCarrito.addEventListener("mousemove", () => {
+    irCarrito.title = carrito.length > 0 ? `${carrito.length} productos en carrito` : "Carrito sin productos"
+})
 
-    function calcularTotalCarrito() {
-        let total = 0
-      
-        bebidas.forEach(bebida => {
-          const cantidad = parseInt(document.getElementById(`cantidad-${bebida.id}`).value)
-          const precioProducto = bebida.precio * cantidad
-          total += precioProducto
+selCategoria.addEventListener("change", () => {
+    const categoriaFiltrada = selCategoria.value;
+    const filtroCategoria = bebidas.filter(bebida => bebida.tipo.includes(categoriaFiltrada));
+    cargarBebida(filtroCategoria)
+});
+
+function agregarBebidaCarrito() {
+    const bebidaCarrito = document.querySelectorAll("button.boton-agregar")
+    bebidaCarrito.forEach((boton) => {
+        boton.addEventListener("click", (e) => {
+            const id = parseInt(e.target.id)
+            const productoSeleccionado = bebidas.find((bebida) => bebida.id === id)
+            carrito.push(productoSeleccionado)
+            localStorage.setItem("miCarrito", JSON.stringify(carrito))
         })
-      
-        return total
-      }
-      
-      function actualizarTotalCarrito() {
+    })
+}
+
+function calcularTotalCarrito() {
+    let total = 0
+
+    bebidas.forEach(bebida => {
+        const cantidad = parseInt(document.getElementById(`cantidad-${bebida.id}`).value)
+        const precioProducto = bebida.precio * cantidad
+        total += precioProducto
+    })
+
+    return total
+}
+
+function actualizarTotalCarrito() {
+    const precioCarrito = document.querySelector("span#calculo-precio-carrito")
+    const total = calcularTotalCarrito()
+    precioCarrito.textContent = total.toFixed()
+}
+
+const botonesAgregar = document.querySelectorAll('.boton-agregar');
+botonesAgregar.forEach(boton => {
+    boton.addEventListener('click', event => {
+        const idProducto = event.target.id
+        const cantidad = parseInt(document.getElementById(`cantidad-${idProducto}`).value)
+        const producto = bebidas.find(item => item.id == idProducto)
+        const precioProducto = producto.precio * cantidad
+
         const precioCarrito = document.querySelector("span#calculo-precio-carrito")
-        const total = calcularTotalCarrito()
-        precioCarrito.textContent = total.toFixed()
-      }
-      
-      const botonesAgregar = document.querySelectorAll('.boton-agregar');
-      botonesAgregar.forEach(boton => {
-        boton.addEventListener('click', event => {
-          const idProducto = event.target.id
-          const cantidad = parseInt(document.getElementById(`cantidad-${idProducto}`).value)
-          const producto = bebidas.find(item => item.id == idProducto)
-          const precioProducto = producto.precio * cantidad
-          
-          const precioCarrito = document.querySelector("span#calculo-precio-carrito")
-          const totalActual = parseFloat(precioCarrito.textContent) || 0
-          const nuevoTotal = totalActual + precioProducto
-          precioCarrito.textContent = nuevoTotal.toFixed()
-        })
-      })
+        const totalActual = parseFloat(precioCarrito.textContent) || 0
+        const nuevoTotal = totalActual + precioProducto
+        precioCarrito.textContent = nuevoTotal.toFixed()
+    })
+})
 
-      document.getElementById('vaciar-carrito').addEventListener('click', function() {
-        const precioCarrito = document.querySelector("span#calculo-precio-carrito")
-        precioCarrito.textContent = '0,00'
-      })
-    
+document.getElementById('vaciar-carrito').addEventListener('click', function () {
+    const precioCarrito = document.querySelector("span#calculo-precio-carrito")
+    precioCarrito.textContent = '0,00'
+})
+
