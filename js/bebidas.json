@@ -4,7 +4,7 @@
           "tamanio": "500 cc",
           "tipo": "Agua mineral",
           "formato": "Botella",
-          "imagen": "./recursos/villa-del-sur-botella.jpg",
+          "imagen": "../recursos/villa-del-sur-botella.jpg",
           "precio": 200
         },
         {
@@ -13,7 +13,7 @@
           "tamanio": "500 cc",
           "tipo": "Agua mineral",
           "formato": "Botella",
-          "imagen": "./recursos/bonaqua-botella.webp",
+          "imagen": "../recursos/bonaqua-botella.webp",
           "precio": 150
         },
         {
@@ -22,7 +22,7 @@
           "tamanio": "500 cc",
           "tipo": "Agua mineral",
           "formato": "Botella",
-          "imagen": "./recursos/villavicencio-botella.webp",
+          "imagen": "../recursos/villavicencio-botella.webp",
           "precio": 220
         },
         {
@@ -31,7 +31,7 @@
           "tamanio": "500 cc",
           "tipo": "Agua mineral",
           "formato": "Botella",
-          "imagen": "./recursos/glaciar-botella.webp",
+          "imagen": "../recursos/glaciar-botella.webp",
           "precio": 170
         },
         {
@@ -40,7 +40,7 @@
           "tamanio": "500 cc",
           "tipo": "Agua mineral",
           "formato": "Botella",
-          "imagen": "./recursos/eco-de-los-andes-botella.webp",
+          "imagen": "../recursos/eco-de-los-andes-botella.webp",
           "precio": 200
         },
         {
@@ -49,7 +49,7 @@
           "tamanio": "500 cc",
           "tipo": "Cerveza",
           "formato": "Lata",
-          "imagen": "./recursos/heineken-lata.webp",
+          "imagen": "../recursos/heineken-lata.webp",
           "precio": 600
         },
         {
@@ -58,7 +58,7 @@
           "tamanio": "1 litro",
           "tipo": "Cerveza",
           "formato": "Botella",
-          "imagen": "./recursos/heineken-botella.webp",
+          "imagen": "../recursos/heineken-botella.webp",
           "precio": 1200
         },
         {
@@ -67,7 +67,7 @@
           "tamanio": "500 cc",
           "tipo": "Cerveza",
           "formato": "Lata",
-          "imagen": "./recursos/stella-artois-lata.webp",
+          "imagen": "../recursos/stella-artois-lata.webp",
           "precio": 600
         },
         {
@@ -76,7 +76,7 @@
           "tamanio": "1 litro",
           "tipo": "Cerveza",
           "formato": "Botella",
-          "imagen": "./recursos/stella-artois-botella.jpg",
+          "imagen": "../recursos/stella-artois-botella.jpg",
           "precio": 1200
         },
         {
@@ -85,7 +85,7 @@
           "tamanio": "500 cc",
           "tipo": "Cerveza",
           "formato": "Lata",
-          "imagen": "./recursos/quilmes-lata.png",
+          "imagen": "../recursos/quilmes-lata.png",
           "precio": 550
         },
         {
@@ -94,7 +94,7 @@
           "tamanio": "1 litro",
           "tipo": "Cerveza",
           "formato": "Botella",
-          "imagen": "./recursos/quilmes-botella.webp",
+          "imagen": "../recursos/quilmes-botella.webp",
           "precio": 1000
         },
         {
@@ -103,7 +103,7 @@
           "tamanio": "500 cc",
           "tipo": "Cerveza",
           "formato": "Lata",
-          "imagen": "./recursos/brahma-lata.jpg",
+          "imagen": "../recursos/brahma-lata.jpg",
           "precio": 450
         },
         {
@@ -112,7 +112,7 @@
           "tamanio": "1 litro",
           "tipo": "Cerveza",
           "formato": "Botella",
-          "imagen": "./recursos/brahma-botella.jpg",
+          "imagen": "../recursos/brahma-botella.jpg",
           "precio": 800
         },
         {
@@ -121,7 +121,7 @@
           "tamanio": "330 cc",
           "tipo": "Gaseosa",
           "formato": "Lata",
-          "imagen": "./recursos/coca-cola-original-lata.jpg",
+          "imagen": "../recursos/coca-cola-original-lata.jpg",
           "precio": 350
         },
         {
@@ -130,7 +130,7 @@
           "tamanio": "1.5 litros",
           "tipo": "Gaseosa",
           "formato": "Botella",
-          "imagen": "./recursos/coca-cola-original-botella.jpg",
+          "imagen": "../recursos/coca-cola-original-botella.jpg",
           "precio": 800
         },
         {
@@ -139,7 +139,7 @@
           "tamanio": "330 cc",
           "tipo": "Gaseosa",
           "formato": "Lata",
-          "imagen": "./recursos/sprite-lata.jpg",
+          "imagen": "../recursos/sprite-lata.jpg",
           "precio": 300
         },
         {
@@ -148,7 +148,7 @@
           "tamanio": "1.5 litros",
           "tipo": "Gaseosa",
           "formato": "Botella",
-          "imagen": "./recursos/sprite-botella.jpg",
+          "imagen": "../recursos/sprite-botella.jpg",
           "precio": 700
         },
         {
@@ -157,7 +157,7 @@
           "tamanio": "330 cc",
           "tipo": "Gaseosa",
           "formato": "Lata",
-          "imagen": "./recursos/paso-de-los-toros-lata.jpg",
+          "imagen": "../recursos/paso-de-los-toros-lata.jpg",
           "precio": 300
         },
         {
@@ -166,7 +166,7 @@
           "tamanio": "1.5 litros",
           "tipo": "Gaseosa",
           "formato": "Botella",
-          "imagen": "./recursos/paso-de-los-toros-botella.jpg",
+          "imagen": "../recursos/paso-de-los-toros-botella.jpg",
           "precio": 700
         },
         {
@@ -175,7 +175,7 @@
           "tamanio": "500 cc",
           "tipo": "Agua con gas",
           "formato": "Botella",
-          "imagen": "./recursos/villavicencio-con-gas.jpg",
+          "imagen": "../recursos/villavicencio-con-gas.jpg",
           "precio": 250
         },
         {
@@ -184,7 +184,7 @@
           "tamanio": "500 cc",
           "tipo": "Agua con gas",
           "formato": "Botella",
-          "imagen": "./recursos/eco-de-los-andes-con-gas.webp",
+          "imagen": "../recursos/eco-de-los-andes-con-gas.webp",
           "precio": 220
         },
         {
@@ -193,7 +193,7 @@
           "tamanio": "1 litro",
           "tipo": "Whisky",
           "formato": "Botella",
-          "imagen": "./recursos/chivas-regal.webp",
+          "imagen": "../recursos/chivas-regal.webp",
           "precio": 7000
         },
         {
@@ -202,7 +202,7 @@
           "tamanio": "1 litro",
           "tipo": "Whisky",
           "formato": "Botella",
-          "imagen": "./recursos/red-label.jpeg",
+          "imagen": "../recursos/red-label.jpeg",
           "precio": 12000
         },
         {
@@ -211,7 +211,7 @@
           "tamanio": "1 litro",
           "tipo": "Whisky",
           "formato": "Botella",
-          "imagen": "./recursos/black-label.jpg",
+          "imagen": "../recursos/black-label.jpg",
           "precio": 20000
         },
         {
@@ -220,7 +220,7 @@
           "tamanio": "1 litro",
           "tipo": "Whisky",
           "formato": "Botella",
-          "imagen": "./recursos/blue-label.jpg",
+          "imagen": "../recursos/blue-label.jpg",
           "precio": 90000
         },
         {
@@ -229,7 +229,7 @@
           "tamanio": "1 litro",
           "tipo": "Vino",
           "formato": "Botella",
-          "imagen": "./recursos/vino-trumpeter.jpg",
+          "imagen": "../recursos/vino-trumpeter.jpg",
           "precio": 7000
         },
         {
@@ -238,6 +238,6 @@
           "tamanio": "1 litro",
           "tipo": "Vino",
           "formato": "Botella",
-          "imagen": "./recursos/vino-nicasia.jpg",
+          "imagen": "../recursos/vino-nicasia.jpg",
           "precio": 6500
         }]

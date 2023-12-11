@@ -34,10 +34,10 @@ console.log("Esta buscando: " + articulo);
 console.warn("Mensaje de advertencia");
 console.error("Mensaje de error");
 */
-
+/*
 const bebidas = []
 const URL = "js/bebidas.json"
-
+*/  
 
 //funcion convencional
 const edadUsuario = new Promise((resolve, rejected) => {
@@ -460,7 +460,7 @@ function productoError() {
             </div>`
 }
 
-/*
+
 function cargarBebida(array) {
     if (array.length > 0) {
         creadorBebida.innerHTML = ""
@@ -468,9 +468,9 @@ function cargarBebida(array) {
         agregarBebidaCarrito()
     }
 }
-cargarBebida(bebidas)*/
+cargarBebida(bebidas)
 
-
+/*
 function listaBebidas() {
     fetch(URL)
     .then((response)=> response.json())
@@ -478,7 +478,7 @@ function listaBebidas() {
     .then(() => cargarBebida())
     .catch((error) => creadorBebida.innerHTML = productoError())
 }
-listaBebidas()
+listaBebidas()*/
 
 
 const selCategoria = document.querySelector("select.selectBebidas");
