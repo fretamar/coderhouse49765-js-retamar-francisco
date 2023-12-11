@@ -1,5 +1,5 @@
 <h1 align="center">
-  <p align="center">Tercera pre-entrega Javascript 49765 - Francisco Retamar</p>
+  <p align="center">Proyecto final Javascript 49765 - Francisco Retamar</p>
   <img src="https://raw.githubusercontent.com/GiorgioCode/Tutorias_Javascript/master/HEADER_CODER.png" alt="Javascript Coder"></a>
 </h1>
 
@@ -9,11 +9,9 @@
 
 ## Introducción al proyecto
 
-  - La idea del proyecto es un catálogo de alimentos y bebidas, donde se pueden ver los precios para hacer una lista, seleccionar entre distintos packs y formatos, como también calcular promociones.
+  - La idea del proyecto es un catálogo bebidas, donde se pueden ver los precios para hacer una lista, seleccionar entre distintos packs y formatos, como también calcular promociones.
     
   - Inicialmente, comencé con la parte de bebidas, incluyendo una nav-bar con el estilo heredado de "Miligram".
-    
-  - Hay 3 hojas de JS, una por clase, donde fui dejando anotaciones sobre lo visto en cada una de ellas y comenté algunas condiciones, ciclos o declaraciones en la medida que fuimos avanzando en el conocimiento del lenguaje.
 
 ## Consignas de la 1ra pre-entrega 
 
@@ -35,4 +33,9 @@
  - **JSON y Storage:** Genere el carrito de compras y lo almacena en la memoria local de la pc, estructurando el mismo como un array y convirtiendolo a la misma estructura del array de objetos que tengo en el código js.
  - **Modificación del DOM por eventos:** Generé un span donde te va indicando el precio que vas obteniendo desde la selección de productos una vez das click en el boton de cada tarjeta multiplicando la cantidad por el precio y luego haciendo una sumatoria de todos los productos seleccionados.
 
+## Consignas de la Entrega Final 
+
+ - **Librerias:** Introduje las librerias Sweet Alert y Toastify para darle mayor dinamismo al proyecto y que el usuario tenga una respuesta acorde a las acciones que está tomando. Pedido de mayoría de edad al ingresar por ser página de venta de alcohol, cuadro re-direccionamiento al carrito, toast de productos agregados al carrito.
+ - **Promesas y Asincronía:** Utilicé asincronía para el mensaje de ingreso a la página siendo mayor de edad para que puedan ver primero que esta cargando correctamente la página. A su vez, utilicé promesas en base a las respuestas del mismo campo de mayoría de edad. En el trabajo posterior se profundizó aún mas con promesas.
+ - **Ajax y Fetch:** Reemplacé el array de productos en un archivo js por el archivo JSON con su correspondiente funcion fetch.
 
