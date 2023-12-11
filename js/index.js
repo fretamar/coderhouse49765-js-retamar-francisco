@@ -428,8 +428,7 @@ function bebidasAlfabeticamente() {
 }
 
 const carrito = JSON.parse(localStorage.getItem("miCarrito")) || []
-const bebidas = []
-const URL = "js/bebida.json"
+const bebida = []
 
 
 //Document Object Model
@@ -438,7 +437,7 @@ const creadorBebida = document.querySelector("div.tarjeta-producto#tarjetaBebida
 
 function crearProducto(bebida) {
     return `<div class="tarjeta-producto" id="tarjetaBebida">
-                <img class="imagen-producto" src="${bebida.imagen}" alt="Producto">
+                <img class="imagen-producto" src="${bebida.picture}" alt="Producto">
                 <h2 class="titulo-producto">${bebida.marca}</h2>
                 <p class="precio-producto">${bebida.precio}</p>
                 <label for="cantidad">Cantidad:</label>
@@ -462,7 +461,7 @@ function productoError() {
             </div>`
 }
 
-
+/*
 function cargarBebida(array) {
     if (array.length > 0) {
         creadorBebida.innerHTML = ""
@@ -471,15 +470,15 @@ function cargarBebida(array) {
     }
 }
 cargarBebida(bebidas)
-
-
+*/
 async function listaBebidas() {
-    try{
-    const respuesta = await fetch(URL)
-    const data = await Response.json()
-    bebidas.push(...data)
-    cargarBebida()
-    } catch(error) { creadorBebida.innerHTML = productoError()}
+    try {
+        const respuesta = await fetch("js/bebida.json")
+        const data = await respuesta.json()
+        creadorBebida.innerHTML = data.map(bebida => crearProducto(bebida)).join('')
+    } catch(error) {
+        creadorBebida.innerHTML = productoError()
+    }
 }
 listaBebidas()
 
