@@ -34,6 +34,10 @@ console.log("Esta buscando: " + articulo);
 console.warn("Mensaje de advertencia");
 console.error("Mensaje de error");
 */
+/*
+const bebidas = []
+const URL = "js/bebidas.json"*/
+
 
 //funcion convencional
 const edadUsuario = new Promise((resolve, rejected) => {
@@ -461,12 +465,20 @@ function cargarBebida(array) {
         creadorBebida.innerHTML = ""
         array.forEach((bebida) => creadorBebida.innerHTML += crearProducto(bebida))
         agregarBebidaCarrito()
-    } else {
-        creadorBebida.innerHTML = productoError();
     }
 }
-
 cargarBebida(bebidas)
+
+/*
+function listaBebidas() {
+    fetch(URL)
+    .then((response)=> response.json())
+    .then((data)=> bebidas.push(...data))
+    .then(() => cargarBebida())
+    .catch((error) => creadorBebida.innerHTML = productoError())
+}
+listaBebidas()*/
+
 
 const selCategoria = document.querySelector("select.selectBebidas");
 const tiposAgregados = new Set();
@@ -508,7 +520,18 @@ selCategoria.addEventListener("change", () => {
     cargarBebida(filtroCategoria)
 });
 
-function agregarBebidaCarrito() {
+function mensajeToast(mensaje, estilo) {
+    Toastify({
+        text: mensaje,
+        duration: 5000,
+        className: "info",
+        gravity: "bottom",
+        style: {
+            background: estilo,
+        }
+    }).showToast()
+}
+    function agregarBebidaCarrito() {
     const bebidaCarrito = document.querySelectorAll("button.boton-agregar")
     bebidaCarrito.forEach((boton) => {
         boton.addEventListener("click", (e) => {
@@ -516,6 +539,7 @@ function agregarBebidaCarrito() {
             const productoSeleccionado = bebidas.find((bebida) => bebida.id === id)
             carrito.push(productoSeleccionado)
             localStorage.setItem("miCarrito", JSON.stringify(carrito))
+            mensajeToast(`Agregaste ${productoSeleccionado.marca} al carrito`, "#a858af")
         })
     })
 }
