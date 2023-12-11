@@ -35,9 +35,6 @@ console.warn("Mensaje de advertencia");
 console.error("Mensaje de error");
 */
 
-const bebidas = []
-const URL = "js/bebidas.json"
-
 
 //funcion convencional
 const edadUsuario = new Promise((resolve, rejected) => {
@@ -430,6 +427,11 @@ function bebidasAlfabeticamente() {
     console.table(bebidas)
 }
 
+const carrito = JSON.parse(localStorage.getItem("miCarrito")) || []
+const bebidas = []
+const URL = "js/bebida.json"
+
+
 //Document Object Model
 
 const creadorBebida = document.querySelector("div.tarjeta-producto#tarjetaBebida")
@@ -460,7 +462,7 @@ function productoError() {
             </div>`
 }
 
-/*
+
 function cargarBebida(array) {
     if (array.length > 0) {
         creadorBebida.innerHTML = ""
@@ -468,15 +470,16 @@ function cargarBebida(array) {
         agregarBebidaCarrito()
     }
 }
-cargarBebida(bebidas)*/
+cargarBebida(bebidas)
 
 
-function listaBebidas() {
-    fetch(URL)
-    .then((response)=> response.json())
-    .then((data)=> bebidas.push(...data))
-    .then(() => cargarBebida())
-    .catch((error) => creadorBebida.innerHTML = productoError())
+async function listaBebidas() {
+    try{
+    const respuesta = await fetch(URL)
+    const data = await Response.json()
+    bebidas.push(...data)
+    cargarBebida()
+    } catch(error) { creadorBebida.innerHTML = productoError()}
 }
 listaBebidas()
 
@@ -496,7 +499,6 @@ bebidas.forEach((bebida) => {
 
 //Eventos
 
-const carrito = JSON.parse(localStorage.getItem("miCarrito")) || []
 
 const irCarrito = document.querySelector("img.carrito-compra")
 
